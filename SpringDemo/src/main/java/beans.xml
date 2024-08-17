@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" default-lazy-init="false">
+
+    <!-- bean definitions here -->
+<bean id ="restaurant" class ="com.soa.SpringDemo.Restaurant" scope = "prototype" init-method="init" destroy-method= "destroy">
+<property name="customer" ref= "customer"/>
+<property name="standardHour" ref= "standardhour"/>
+<property name="happyHour" ref= "happydhour"/>
+</bean>
+
+<bean id="customer1" class ="com.soa.SpringDemo.Customer" scope = "prototype" init-method="init" destroy-method= "destroy">
+<property name="fName" value="Saurav" />
+<property name="lName" value= "Ganguly"/>
+<property name="age" value ="45"/>
+</bean>
+
+<bean id="customer" class ="com.soa.SpringDemo.Customer" scope = "prototype" init-method="init" destroy-method= "destroy">
+<constructor-arg value="James"/>
+<constructor-arg value="Carbet"/>
+<constructor-arg value="30"/>
+</bean>
+<bean id ="standardhour" class="com.soa.SpringDemo.StandardHoreImplement" scope = "prototype" init-method="init" destroy-method= "destroy" ></bean>
+<bean id ="happydhour" class="com.soa.SpringDemo.HappyHourImplement" scope = "prototype" init-method="init" destroy-method= "destroy"></bean>
+</beans>
