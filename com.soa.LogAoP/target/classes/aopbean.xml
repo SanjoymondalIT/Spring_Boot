@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans>
+<bean id ="bank"  class ="qualifier name of bank class"/>
+<bean id ="Logaroundservice"  class ="qualifier name of Logaroundservice class"/>
+
+<bean> id="proxy" class ="qualifier name of proxy .class"</bean>
+<property name= "target"  ref ="bank"/>
+<property name= "interceptorNames">
+<list>
+<value>Logaroundservice</value>
+
+
+
+</list>
+
+</property>
+
+
+</beans>
